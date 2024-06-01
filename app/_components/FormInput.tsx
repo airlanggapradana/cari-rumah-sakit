@@ -55,7 +55,7 @@ const FormInput = () => {
         <select
           name="provinsi"
           id="provinsi"
-          className="w-full p-3 rounded bg-gray-100 outline-none border-2 border-gray-300"
+          className="w-full p-3 rounded bg-gray-100 outline-none border-2 border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
           value={selectedProvince}
           onChange={(e) => setSelectedProvince(e.target.value)}
         >
@@ -76,7 +76,7 @@ const FormInput = () => {
         <select
           name="cities"
           id="cities"
-          className="w-full p-3 rounded bg-gray-100 outline-none border-2 border-gray-300"
+          className="w-full p-3 rounded bg-gray-100 outline-none border-2 border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
         >

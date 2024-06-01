@@ -37,7 +37,7 @@ const CustomCard = ({
 }) => {
   return (
     <>
-      <Card className="bg-gray-100 border-2 border-gray-300 shadow-md h-full">
+      <Card className="bg-gray-100 border-2 border-gray-300 shadow-md h-full dark:bg-gray-800">
         <CardHeader>
           <CardTitle className="leading-relaxed text-start">{title}</CardTitle>
           <CardDescription className="flex items-start gap-2 text-start">
@@ -122,9 +122,11 @@ const HospitalCardList = ({
                 />
               </DialogTrigger>
 
-              <DialogContent>
+              <DialogContent className="max-w-sm sm:max-w-xl dark:bg-gray-900">
                 <DialogHeader>
-                  <DialogTitle>{hospital.name}</DialogTitle>
+                  <DialogTitle className="dark:text-gray-100">
+                    {hospital.name}
+                  </DialogTitle>
                   <DialogDescription className="flex items-start gap-2">
                     <MapPin size={16} />
                     {hospital.address}
@@ -132,9 +134,13 @@ const HospitalCardList = ({
                 </DialogHeader>
 
                 <div className="flex flex-col gap-3">
-                  <p className="font-medium text-sm">
-                    Ruangan Tersedia: <br />
-                    {hospital.available_beds[0].room_name}
+                  <p className="font-medium text-sm dark:text-gray-300">
+                    Nama Ruangan: <br />
+                    {hospital.available_beds[0].available === 0 ? (
+                      "Tidak ada ruangan yang tersedia"
+                    ) : (
+                      <>{hospital.available_beds[0].room_name}</>
+                    )}
                   </p>
                 </div>
               </DialogContent>
