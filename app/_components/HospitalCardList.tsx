@@ -109,7 +109,7 @@ const HospitalCardList = ({
       ) : (
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
           {hospital.map((hospital) => (
-            <Dialog>
+            <Dialog key={hospital.id}>
               <DialogTrigger className="h-full">
                 <CustomCard
                   key={hospital.id}
